@@ -1,7 +1,7 @@
 ## ZC702 to ADAR1000-EVALZ P3 template constraints
 ## IMPORTANT:
 ## 1) Fill PACKAGE_PIN values from ZC702 user guide/schematic before implementation.
-## 2) Do NOT use J63 even-numbered pins when J41 PJTAG is connected / used.
+## 2) Do NOT use J63 even-numbered pins when J41 Platform JTAG (PJTAG) is connected / used.
 ## 3) All PMOD/P3 digital lines are 3.3V logic.
 
 ## 200 MHz differential clock source (Y9/Y8 path)

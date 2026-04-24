@@ -18,7 +18,7 @@ module adar1000_spi_master #(
     reg [FRAME_BITS-1:0] shift_tx;
     reg [FRAME_BITS-1:0] shift_rx;
     reg [15:0]           div_cnt;
-    reg [7:0]            bit_cnt;
+    reg [15:0]           bit_cnt;
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -42,13 +42,13 @@ module adar1000_spi_master #(
                     busy     <= 1'b1;
                     cs_n     <= 1'b0;
                     div_cnt  <= 16'd0;
-                    bit_cnt  <= FRAME_BITS[7:0];
+                    bit_cnt  <= FRAME_BITS;
                     shift_tx <= tx_data;
                     shift_rx <= {FRAME_BITS{1'b0}};
                     mosi     <= tx_data[FRAME_BITS-1];
                 end
             end else begin
-                if (div_cnt == CLK_DIV[15:0]) begin
+                if (div_cnt == CLK_DIV) begin
                     div_cnt <= 16'd0;
 
                     if (sclk == 1'b0) begin
@@ -57,14 +57,14 @@ module adar1000_spi_master #(
                     end else begin
                         sclk <= 1'b0;
 
-                        if (bit_cnt == 8'd1) begin
+                        if (bit_cnt == 16'd1) begin
                             busy    <= 1'b0;
                             done    <= 1'b1;
                             cs_n    <= 1'b1;
                             mosi    <= 1'b0;
                             rx_data <= {shift_rx[FRAME_BITS-2:0], miso};
                         end else begin
-                            bit_cnt  <= bit_cnt - 8'd1;
+                            bit_cnt  <= bit_cnt - 16'd1;
                             shift_tx <= {shift_tx[FRAME_BITS-2:0], 1'b0};
                             mosi     <= shift_tx[FRAME_BITS-2];
                         end
