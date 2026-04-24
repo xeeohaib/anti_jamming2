@@ -22,7 +22,7 @@ module zc702_j62_j63_adar1000_top #(
     output wire update_busy,
     output wire update_done,
 
-    output wire j62_pin1_spi_sel_a,
+    output wire j62_pin1_spi_sel_a_n,
     output wire j62_pin2_spi_mosi,
     input  wire j62_pin3_spi_miso,
     output wire j62_pin4_spi_clk,
@@ -68,7 +68,7 @@ module zc702_j62_j63_adar1000_top #(
         .spi_clk          (j62_pin4_spi_clk),
         .spi_mosi         (j62_pin2_spi_mosi),
         .spi_miso         (j62_pin3_spi_miso),
-        .spi_sel_a        (j62_pin1_spi_sel_a),
+        .spi_sel_a_n      (j62_pin1_spi_sel_a_n),
         .rx_load          (j63_pin1_rx_load),
         .tx_load          (j63_pin3_tx_load),
         .tr_out           (j63_pin7_tr),

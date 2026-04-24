@@ -22,7 +22,7 @@ module adar1000_beam_update #(
     output wire                     spi_clk,
     output wire                     spi_mosi,
     input  wire                     spi_miso,
-    output wire                     spi_sel_a,
+    output wire                     spi_sel_a_n,
     output reg                      rx_load,
     output reg                      tx_load,
     output reg                      tr_out,
@@ -77,7 +77,7 @@ module adar1000_beam_update #(
         .sclk   (spi_clk),
         .mosi   (spi_mosi),
         .miso   (spi_miso),
-        .cs_n   (spi_sel_a)
+        .cs_n   (spi_sel_a_n)
     );
 
     always @(posedge clk or posedge rst) begin

@@ -20,7 +20,7 @@ This design is a practical **PS+PL split**:
 
 ## ZC702 ↔ ADAR1000 P3 mapping used
 
-- `j62_pin1_spi_sel_a` -> P3 pin 2 (`SPI_SEL_A`)
+- `j62_pin1_spi_sel_a_n` -> P3 pin 2 (`SPI_SEL_A`, active-low)
 - `j62_pin2_spi_mosi`  -> P3 pin 4 (`SPI_MOSI`)
 - `j62_pin3_spi_miso`  <- P3 pin 6 (`SPI_MISO`)
 - `j62_pin4_spi_clk`   -> P3 pin 8 (`SPI_CLK`)

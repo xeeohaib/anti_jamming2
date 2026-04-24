@@ -1,7 +1,7 @@
 ## ZC702 to ADAR1000-EVALZ P3 template constraints
 ## IMPORTANT:
 ## 1) Fill PACKAGE_PIN values from ZC702 user guide/schematic before implementation.
-## 2) Do NOT use J63 even-numbered pins when J41 PJTAG is connected/used.
+## 2) Do NOT use J63 even-numbered pins when J41 PJTAG is connected / used.
 ## 3) All PMOD/P3 digital lines are 3.3V logic.
 
 ## 200 MHz differential clock source (Y9/Y8 path)
@@ -22,11 +22,11 @@ set_property IOSTANDARD LVCMOS33 [get_ports {frame0[*] frame1[*] frame2[*] frame
 ## J62 pin2 -> P3 pin4  (SPI_MOSI)
 ## J62 pin3 <- P3 pin6  (SPI_MISO)
 ## J62 pin4 -> P3 pin8  (SPI_CLK)
-#set_property PACKAGE_PIN <J62_PIN1> [get_ports j62_pin1_spi_sel_a]
+#set_property PACKAGE_PIN <J62_PIN1> [get_ports j62_pin1_spi_sel_a_n]
 #set_property PACKAGE_PIN <J62_PIN2> [get_ports j62_pin2_spi_mosi]
 #set_property PACKAGE_PIN <J62_PIN3> [get_ports j62_pin3_spi_miso]
 #set_property PACKAGE_PIN <J62_PIN4> [get_ports j62_pin4_spi_clk]
-set_property IOSTANDARD LVCMOS33 [get_ports {j62_pin1_spi_sel_a j62_pin2_spi_mosi j62_pin3_spi_miso j62_pin4_spi_clk}]
+set_property IOSTANDARD LVCMOS33 [get_ports {j62_pin1_spi_sel_a_n j62_pin2_spi_mosi j62_pin3_spi_miso j62_pin4_spi_clk}]
 
 ## J63 odd-pin-only mapping (avoid even pins due PJTAG sharing)
 ## J63 pin1 -> P3 pin1  (GPIO0 RX_LOAD)
