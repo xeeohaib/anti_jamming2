@@ -15,7 +15,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports rst_n]
 
 ## Example control inputs if routed to top pins (otherwise driven internally by AXI/EMIO logic)
 set_property IOSTANDARD LVCMOS33 [get_ports {update_req rx_load_on_update tr_mode pa_enable}]
-set_property IOSTANDARD LVCMOS33 [get_ports {frame0[*] frame1[*] frame2[*] frame3[*] frame4[*] frame5[*] frame6[*] frame7[*]}]
+## Uncomment only when frame buses are routed to external FPGA pins.
+#set_property IOSTANDARD LVCMOS33 [get_ports {frame0[*] frame1[*] frame2[*] frame3[*] frame4[*] frame5[*] frame6[*] frame7[*]}]
 
 ## J62 mapping (recommended SPI group)
 ## J62 pin1 -> P3 pin2  (SPI_SEL_A)

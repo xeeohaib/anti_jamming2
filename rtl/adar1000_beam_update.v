@@ -58,7 +58,8 @@ module adar1000_beam_update #(
                 3'd4: frame_mux = frame4;
                 3'd5: frame_mux = frame5;
                 3'd6: frame_mux = frame6;
-                default: frame_mux = frame7;
+                3'd7: frame_mux = frame7;
+                default: frame_mux = {SPI_FRAME_BITS{1'b0}};
             endcase
         end
     endfunction

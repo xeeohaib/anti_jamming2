@@ -39,7 +39,7 @@ Use `constraints/zc702_j62_j63_adar1000_template.xdc`:
 
 ## Software integration flow
 
-1. PS computes per-update beam/null weights for your 1D array at 11 GHz.
+1. PS computes per-update beam/null weights for your 1D array (this task target: 11 GHz; ADAR1000 range: 8-16 GHz).
 2. PS converts those weights into ADAR1000 register write frames (`frame0..frame7`).
 3. PS pulses `update_req`.
 4. PL writes all frames over SPI and pulses `TX_LOAD` (and optionally `RX_LOAD`).
