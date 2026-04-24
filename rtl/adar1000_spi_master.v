@@ -25,7 +25,7 @@ module adar1000_spi_master #(
             shift_tx <= {FRAME_BITS{1'b0}};
             shift_rx <= {FRAME_BITS{1'b0}};
             div_cnt  <= 16'd0;
-            bit_cnt  <= 8'd0;
+            bit_cnt  <= 16'd0;
             rx_data  <= {FRAME_BITS{1'b0}};
             busy     <= 1'b0;
             done     <= 1'b0;
@@ -42,7 +42,7 @@ module adar1000_spi_master #(
                     busy     <= 1'b1;
                     cs_n     <= 1'b0;
                     div_cnt  <= 16'd0;
-                    bit_cnt  <= FRAME_BITS;
+                    bit_cnt  <= 16'd0 + FRAME_BITS;
                     shift_tx <= tx_data;
                     shift_rx <= {FRAME_BITS{1'b0}};
                     mosi     <= tx_data[FRAME_BITS-1];
